@@ -28,7 +28,7 @@ public class subsequences_recursion
         System.out.println("Enter the elements : ");
         for (int i=0;i<n;i++)
         arr[i]=sc.nextInt();
-
+        
         System.out.println("All Subsequences of " + Arrays.toString(arr)+ ":");
         printsubsequences(arr,0, new ArrayList<>());
         sc.close();
