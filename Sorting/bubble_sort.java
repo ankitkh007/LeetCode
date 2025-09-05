@@ -35,3 +35,7 @@ public class bubble_sort
         sc.close();
     }
 }
+
+// Time COmplexity
+// Best = O(n)
+// Avg,Worst = O(n^2)

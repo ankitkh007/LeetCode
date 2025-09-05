@@ -1,20 +1,19 @@
 import java.util.*;
-public class selection_sort 
+public class insertion_sort 
 {
-    static void s_sort(int arr[],int n)
+    static void in_sort(int arr[],int n)
     {
-        int min=0,j;
-        for(int i=0;i<=n-2;i++)
+        int temp=0;
+        for(int i=0;i<=n-1;i++)
         {
-            min=i;
-            for(j=i;j<=n-1;j++)
+            int j=i;
+            while(j>0 && arr[j-1]>arr[j])
             {
-                if(arr[j]<arr[min])
-                min=j;
+                temp=arr[j];
+                arr[j]=arr[j-1];
+                arr[j-1]=temp;
+                j--;
             }
-            int temp=arr[min];
-            arr[min]=arr[i];
-            arr[i]=temp;
         }
     }
     public static void main(String[] args) 
@@ -28,7 +27,7 @@ public class selection_sort
         for(int i=0;i<n;i++)
         arr[i]=sc.nextInt();
 
-        s_sort(arr, n);
+        in_sort(arr, n);
         System.out.println("The sorted elements are : ");
         for(int i=0;i<n;i++)
         System.out.print(arr[i]+" ");
@@ -37,4 +36,5 @@ public class selection_sort
 }
 
 // Time COmplexity
-// Best,Avg,Worst = O(n^2)
+// Best = O(n)
+// Avg,Worst = O(n^2)
