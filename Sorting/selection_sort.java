@@ -36,5 +36,5 @@ public class selection_sort
     }
 }
 
-// Time COmplexity
+// Time Complexity
 // Best,Avg,Worst = O(n^2)

@@ -35,6 +35,6 @@ public class insertion_sort
     }
 }
 
-// Time COmplexity
+// Time Complexity
 // Best = O(n)
 // Avg,Worst = O(n^2)

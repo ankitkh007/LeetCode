@@ -36,6 +36,6 @@ public class bubble_sort
     }
 }
 
-// Time COmplexity
+// Time Complexity
 // Best = O(n)
 // Avg,Worst = O(n^2)
