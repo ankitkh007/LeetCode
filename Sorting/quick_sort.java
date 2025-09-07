@@ -50,3 +50,6 @@ public class quick_sort
         sc.close();    
     }
 }
+
+// Time Complexity
+// Best,Avg,Worst = O(n log n)
