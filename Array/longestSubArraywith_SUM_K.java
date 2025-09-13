@@ -33,3 +33,6 @@ public class longestSubArraywith_SUM_K
         sc.close();     
     }      
 }
+
+//Brute force technique
+//TC --> O(n^2)
