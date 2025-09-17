@@ -22,7 +22,6 @@ public class sort_012_DutchnationalFlagAlgo
                 arr[mid]=arr[high];
                 arr[high]=temp;
                 high--;
-                mid++;
             }
         }
 
