@@ -3,7 +3,7 @@ public class rearrange_array_with_sign
 {
     static int[] sortedarray(int arr[])
     {
-        //Variant 1
+        /*//Variety 1
         int ans[]=new int[arr.length];
         int pos=0,neg=1;
         
@@ -18,6 +18,48 @@ public class rearrange_array_with_sign
             {
                 ans[neg]=arr[i];
                 neg+=2;
+            }
+        }
+        return ans;*/
+
+        //variety 2
+        List<Integer> positive=new ArrayList<>();
+        List<Integer> negative=new ArrayList<>();
+        int ans[]=new int[arr.length];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>0)
+            positive.add(arr[i]);
+            else
+            negative.add(arr[i]);
+        }
+
+        if(positive.size()>negative.size())
+        {
+            for(int i=0;i<negative.size();i++)
+            {
+                ans[i*2]=positive.get(i);
+                ans[i*2+1]=negative.get(i);
+            }
+            int index=negative.size()*2;
+            for(int i=negative.size();i<positive.size();i++)
+            {
+                ans[index]=positive.get(i);
+                index++;
+            }
+        }
+        else
+        {
+            for(int i=0;i<positive.size();i++)
+            {
+                ans[i*2]=positive.get(i);
+                ans[i*2+1]=negative.get(i);
+            }
+            int index=positive.size()*2;
+            for(int i=positive.size();i<negative.size();i++)
+            {
+                ans[index]=negative.get(i);
+                index++;
             }
         }
         return ans;
@@ -38,6 +80,10 @@ public class rearrange_array_with_sign
     }    
 }
 
-//Variant 1
+//Variety 1
 //TC--> O(n)
 //SC--> O(n)
+
+//Variety 2
+//TC--> O(2n)
+//Sc--> O(n)
