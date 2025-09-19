@@ -3,7 +3,7 @@ public class majorityElements
 {
     static int findMajorityElement(int arr[])
     {
-        //brute approach
+        /*//brute approach
         for(int i=0;i<arr.length;i++)
         {
             int count=0;
@@ -13,6 +13,17 @@ public class majorityElements
                 count++;
             }
             if(count>(arr.length/2))
+            return arr[i];
+        }
+        return -1;*/
+
+        //Hash Map technique
+        HashMap<Integer, Integer> map=new HashMap<>();
+        for(int i=0;i<arr.length;i++)
+        {
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+
+            if(map.get(arr[i])>arr.length/2)
             return arr[i];
         }
         return -1;
