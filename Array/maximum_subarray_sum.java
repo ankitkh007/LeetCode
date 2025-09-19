@@ -17,11 +17,17 @@ public class maximum_subarray_sum
         //Kadane's Algorithm
         long sum=0L;
         long max=Long.MIN_VALUE;
+        int start=-1,end=-1;
         for(int i=0;i<arr.length;i++)
         {
+            if(sum==0)
+            start=i; //gives starting position of subarray with max sum
             sum+=arr[i];
             if(sum>max)
-            max=sum;
+            {
+                max=sum;
+                end=i; //gives ending position of subarray with max sum
+            }
             if(sum<0)
             sum=0;
         }
