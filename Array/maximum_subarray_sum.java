@@ -25,9 +25,9 @@ public class maximum_subarray_sum
             if(sum<0)
             sum=0;
         }
-        if(max<0)
-        return 0;
-        else
+        //if(max<0) //If Not considering the negative sum
+        //return 0;
+        //else
         return max;
     }
     public static void main(String[] args) 
