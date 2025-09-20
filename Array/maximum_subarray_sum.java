@@ -35,6 +35,19 @@ public class maximum_subarray_sum
         //return 0;
         //else
         return max;
+
+
+        //One more approach (Leetcode Solutions)
+        /*int sum=0;
+        int max=nums[0];
+        for(int i=0;i<nums.length;i++)
+        {
+            sum+=nums[i];
+            max=Math.max(max,sum);
+            if(sum<0)
+            sum=0;
+        }
+        return max;*/
     }
     public static void main(String[] args) 
     {
