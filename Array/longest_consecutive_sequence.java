@@ -4,7 +4,7 @@ public class longest_consecutive_sequence
 {
     static int longestConsecutiveSequence(int nums[])
     {
-        Arrays.sort(nums);
+        /*Arrays.sort(nums);
         int longest=1,count=0,lastSmallest=Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++)
         {
@@ -20,7 +20,33 @@ public class longest_consecutive_sequence
             }
             longest=Math.max(longest,count);
         }
+        return longest;*/
+
+        //Optimal approach
+        if(nums.length==0)
+        return 0;
+        int longest=1;
+        Set<Integer> set=new HashSet<>();
+
+        for(int i=0;i<nums.length;i++)
+        set.add(nums[i]);
+
+        for(int i:set)
+        {
+            if(!set.contains(i-1))
+            {
+                int count=1;
+                int x=i;
+                while(set.contains(x+1))
+                {
+                    x++;
+                    count++;
+                }
+                longest=Math.max(count, longest);
+            }
+        }
         return longest;
+
     }
     public static void main(String[] args) 
     {
