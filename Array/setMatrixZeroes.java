@@ -68,7 +68,7 @@ public class setMatrixZeroes
     //     }
     // }*/
 
-    //Better approach
+    /*//Better approach
     static void set_matrix(int arr[][],int n, int m)
     {
         int rows[]=new int[n]; //to store the position of rows where element is zero
@@ -103,8 +103,59 @@ public class setMatrixZeroes
             System.out.print(arr[i][j]+" ");
             System.out.println();
         }
+    }*/
+        
 
+        //Optimal approach
+    static void set_matrix(int arr[][],int n, int m)
+    {
+        int col0=1;
+        for(int i=0;i<n;i++) //set specif 1st row and column to 0
+        {
+            for(int j=0;j<m;j++)
+            {
+                if(arr[i][j]==0) //checks for the position where arr[i][j]=0 and sets arr[i][0](first column) and arr[0][j](first row) to 1 
+                {
+                    arr[i][0]=0;
+                    if(j!=0)
+                    arr[0][j]=0;
+                    else
+                    col0=1;
+                }
+            }
+        }
+        for(int i=1;i<n;i++) //make changes in the netire matrix leavig 1st row and 1st column
+        {
+            for(int j=1;j<m;j++)
+            {
+                if(arr[i][j]!=0)
+                {
+                    if(arr[i][0]==0 || arr[0][j]==0) //checks for the position where arr[i][j]=0 and sets arr[i][0](first column) and arr[0][j](first row) to 1 
+                    arr[i][j]=0;
+                }
+            }
+        }
+        if(arr[0][0]==0) //if 1st-most element is zero set entire row to zero
+        {
+            for(int j=0;j<m;j++)
+            arr[0][j]=0;
+        }
+        if(col0==0) //if 1st column last element is 0 set entire 1st column to 0
+        {
+            for(int i=0;i<m;i++)
+            arr[i][0]=0;
+        }
+
+        //display final matrix
+        System.out.println("The final Matrix after operation is : ");
+        for (int i = 0; i < n; i++)
+        {
+            for(int j=0;j<m;j++)
+            System.out.print(arr[i][j]+" ");
+            System.out.println();
+        }
     }
+
 
     public static void main(String[] args) 
     {
@@ -121,6 +172,8 @@ public class setMatrixZeroes
             for(int j=0;j<m;j++)
             arr[i][j]=sc.nextInt();
         }
+        // System.out.println(arr.length);
+        // System.out.println(arr[0].length);
         set_matrix(arr, n, m);
         sc.close();
     }
