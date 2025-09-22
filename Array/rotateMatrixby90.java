@@ -40,7 +40,7 @@ public class rotateMatrixby90
             {
                 for(int j=0;j<n/2;j++)
                 {
-                    int temp=arr[i][n-1-j];     //00--03, 01--02
+                    int temp=arr[i][n-1-j];     //00<-->03, 01<-->02
                     arr[i][n-1-j]=arr[i][j];
                     arr[i][j]=temp;
                 }
