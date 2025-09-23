@@ -19,14 +19,16 @@ public class spiral_traversal_of_matrix
             ans.add(matrix[i][right]);
             right--;
 
-            if(top<=bottom)
+            //right-->left
+            if(top<=bottom) //checks if any row exists or not
             {
                 for(int i=right;i>=left;i--)
                 ans.add(matrix[bottom][i]);
                 bottom--;
             }
 
-            if(left<=right)
+            //bottom-->top 
+            if(left<=right) //checks if any column exists or not
             {
                 for(int i=bottom;i>=top;i--)
                 ans.add(matrix[i][left]);
