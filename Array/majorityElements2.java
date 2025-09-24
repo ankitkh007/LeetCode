@@ -62,6 +62,9 @@ public class majorityElements2
         ans.add(element2);
 
         return ans;
+
+        //Final TC-->O(n)+O(n) ~= O(n)
+        //SC--> O(1)
     }
     public static void main(String[] args) 
     {
