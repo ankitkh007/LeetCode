@@ -25,12 +25,12 @@ public class majorityElements2
 
         for(int i:nums)
         {
-            if(count1==0)
+            if(count1==0 && element2!=i)
             {
                 count1=1;
                 element1=i;
             }
-            else if(count2==0)
+            else if(count2==0 && element1!=i)
             {
                 count2=1;
                 element2=i;
