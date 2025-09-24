@@ -1,7 +1,7 @@
 import java.util.*;
 public class pascals_triangle
 {
-    public static List<List<Integer>> generate(int numRows) 
+    /*public static List<List<Integer>> generate(int numRows) 
     {
         List<List<Integer>> result= new ArrayList<>();
         if(numRows<1 || numRows>30)
@@ -27,6 +27,30 @@ public class pascals_triangle
             result.add(newRow);
         }
         return result;
+    }*/
+    
+    //Generates each Pascal's row in TC-->O(n)
+    static List<Integer> generatePascalsRow(int n)
+    {
+        List<Integer> row=new ArrayList<>();
+        int ans=1;
+        row.add(ans);
+        for(int i=1;i<n;i++)
+        {
+            ans=ans*(n-i)/i;
+            row.add(ans);
+        }
+        return row;
+    }
+    //Merges all generated rows into final Pascal's list
+    static List<List<Integer>> pascals_list(int rows)
+    {
+        List<List<Integer>> ans=new ArrayList<>();
+        for(int i=1;i<=rows;i++)
+        {
+            ans.add(generatePascalsRow(i));
+        }
+        return ans;
     }
 
     public static void main(String[] args) 
@@ -34,7 +58,7 @@ public class pascals_triangle
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of rows for Pascal's Traiangle : ");   
         int numRows=sc.nextInt();
-        System.out.println("Output : "+ generate(numRows));
+        System.out.println("Output : "+ pascals_list(numRows));
         sc.close();
     }
 }
