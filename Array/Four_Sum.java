@@ -1,7 +1,7 @@
 import java.util.*;
 public class Four_Sum
 {
-    static List<List<Integer>> fourSum(int[] nums,int target) 
+    /*static List<List<Integer>> fourSum(int[] nums,int target) 
     {
       Set<List<Integer>> st=new HashSet<>(); //it will contain unique triplet sets
       for(int i=0;i<nums.length;i++)
@@ -26,42 +26,44 @@ public class Four_Sum
       }
       List<List<Integer>> ans= new ArrayList<>(st); //finally stores all the unique triplet sets to aur answer list
       return ans;  
-    }
+    }*/
 
     //optimal approach
-    /*static List<List<Integer>> threeSum(int[] nums)
+    static List<List<Integer>> fourSum(int[] nums,int target)
     {
         Arrays.sort(nums);
         List<List<Integer>> ans=new ArrayList<>();
         for(int i=0;i<nums.length;i++)
         {
             if(i!=0 && nums[i]==nums[i-1]) continue;
-            int j=i+1;
-            int k=nums.length-1;
-            while(j<k)
+            for(int j=i+1;j<nums.length;j++)
             {
-                int sum=nums[i]+nums[j]+nums[k];
-                if(sum<0)
+                if(j>i+1 && nums[j]==nums[j-1]) continue;
+                int k=j+1;
+                int l=nums.length-1;
+
+                while(k<l)
                 {
-                    j++;
-                }
-                else if(sum>0)
-                {
-                    k--;
-                }
-                else
-                {
-                    List<Integer> list=Arrays.asList(nums[i],nums[j],nums[k]);
-                    ans.add(list);
-                    j++;
-                    k--;
-                    while(j<k && nums[j]==nums[j-1]) j++;
-                    while(j<k && nums[k]==nums[k+1]) k--;
+                    int sum=nums[i]+nums[j]+nums[k]+nums[l];
+                    
+                    if(sum<target)
+                    k++;
+                    else if(sum>target)
+                    l--;
+                    else
+                    {
+                        List<Integer> list=Arrays.asList(nums[i],nums[j],nums[k],nums[l]);
+                        ans.add(list);
+                        k++;
+                        l--;
+                        while(k<l && nums[k]==nums[k-1]) k++;
+                        while(k<l && nums[l]==nums[l+1]) l--;
+                    }
                 }
             }
         }
         return ans;
-    }*/
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
