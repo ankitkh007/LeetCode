@@ -1,16 +1,16 @@
 import java.util.*;
 public class count_subarray_with_XOR_K
 {
-    //brute solution
-    /*static int countSubarray(int arr[],int k)
+    /*//brute solution
+    static int countSubarray(int arr[],int k)
     {
         int count=0;
         for(int i=0;i<arr.length;i++)
-        {   int sum=0;
+        {   int xor=0;
             for(int j=i;j<arr.length;j++)
             {
-                sum=sum+arr[j];
-                if(sum==k)
+                xor=xor^arr[j];
+                if(xor==k)
                 count++;
             }
         }
@@ -27,12 +27,14 @@ public class count_subarray_with_XOR_K
         for(int i=0;i<arr.length;i++)
         {
             xor=xor^arr[i];
-            count+=mpp.getOrDefault(xor-k, 0); //if (prefix-k) already exists; update count+=no. of times (prefix-k) exists
-            mpp.put(xor, mpp.getOrDefault(xor, 0)+1); // add curent prefix-sum and update its frequency
+            count+=mpp.getOrDefault(xor^k, 0); //if (xor^k) already exists; update count+=no. of times (xor^k) exists
+            mpp.put(xor, mpp.getOrDefault(xor, 0)+1); // add curent xor and update its frequency
         }
 
         return count;
     }
+    //TC-->O(n)
+    //SC-->O(n)
     
     public static void main(String[] args) 
     {
@@ -52,6 +54,3 @@ public class count_subarray_with_XOR_K
         sc.close();     
     }          
 }
-
-//TC-->O(n)
-//SC-->O(n)
