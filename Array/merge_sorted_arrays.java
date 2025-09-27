@@ -58,6 +58,26 @@ public class merge_sorted_arrays
         for(int i=0;i<m;i++)
         System.out.print(arr2[i]+ " ");
     }
+
+    //Leetcode approach TC-->O(m+n)
+    /*public void merge(int[] nums1, int m, int[] nums2, int n) //here nums1[] ka actual length is m+n so that it accomodates both arrays
+    {
+        int i=m-1;//lst valid element of nums1
+        int j=n-1;//last valid element of nums2
+        int k=m+n-1;//last index of nums1
+
+        while(i>=0 && j>=0)
+        {
+            if(nums1[i]>nums2[j])
+            nums1[k--]=nums1[i--];
+            else
+            nums1[k--]=nums2[j--];
+        }
+        
+        while(j>=0)//if any element is left in nums2
+        nums1[k--]=nums2[j--];
+    }*/
+
     public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
