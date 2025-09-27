@@ -30,7 +30,6 @@ public class count_subarray_with_XOR_K
             count+=mpp.getOrDefault(xor^k, 0); //if (xor^k) already exists; update count+=no. of times (xor^k) exists
             mpp.put(xor, mpp.getOrDefault(xor, 0)+1); // add curent xor and update its frequency
         }
-
         return count;
     }
     //TC-->O(n)
