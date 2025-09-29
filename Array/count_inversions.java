@@ -7,8 +7,8 @@ public class count_inversions
        if(low>=high)
        return count;
        int mid=(low+high)/2;
-       count+=m_sort(arr,low,mid); //Divivde left half
-       count+=m_sort(arr, mid+1, high); //Divivde right half
+       count+=m_sort(arr,low,mid); //Divide left half
+       count+=m_sort(arr, mid+1, high); //Divide right half
        count+=merge(arr,low,mid,high); //MERGE divided elements
 
        return count;
