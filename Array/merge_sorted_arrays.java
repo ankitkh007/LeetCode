@@ -62,7 +62,7 @@ public class merge_sorted_arrays
     //Leetcode approach TC-->O(m+n)
     /*public void merge(int[] nums1, int m, int[] nums2, int n) //here nums1[] ka actual length is m+n so that it accomodates both arrays
     {
-        int i=m-1;//lst valid element of nums1
+        int i=m-1;//last valid element of nums1
         int j=n-1;//last valid element of nums2
         int k=m+n-1;//last index of nums1
 
