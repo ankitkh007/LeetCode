@@ -22,7 +22,7 @@ public class count_reverse_pairs
         for(int i=low;i<=mid;i++)
         {
             while(right<=high && arr.get(i)>2*arr.get(right)) right++;
-            count++;
+            count+=(right-(mid+1));
         }
         return count;
     }
