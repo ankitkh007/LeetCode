@@ -15,7 +15,7 @@ public class count_reverse_pairs
        return count;
     }
 
-    static int countPairs(List<Integer> arr, int low, int mid, int high)
+    static int countPairs(List<Integer> arr, int low, int mid, int high) //for counting all valid pairs before merging
     {
         int count=0;
         int right=mid+1;
