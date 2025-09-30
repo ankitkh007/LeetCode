@@ -1,7 +1,7 @@
 import java.util.*;
 public class maximum_subarray_product
 {
-    static long maxSubarrayProduct(int nums[])
+    /*static long maxSubarrayProduct(int nums[])
     {
         int max=0;
         for(int i=0;i<nums.length;i++)
@@ -12,6 +12,23 @@ public class maximum_subarray_product
                 product*=nums[j];
                 max=Math.max(product,max);
             }
+        }
+        return max;
+    }*/
+
+    static long maxSubarrayProduct(int nums[])
+    {
+        int pref=1,suff=1;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(pref==0) pref=1;
+            if(suff==0) suff=1;
+
+            pref*=nums[i];
+            suff*=nums[nums.length-i-1];
+
+            max=Math.max(max, Math.max(pref, suff));
         }
         return max;
     }
