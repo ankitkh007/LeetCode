@@ -1,7 +1,7 @@
 import java.util.*;
 public class second_largest
 {
-    static void s_largest(List<Integer> arr,int n)
+    /*static void s_largest(List<Integer> arr,int n)
     {
         int largest=arr.get(0);
         int slargest=-1;
@@ -16,6 +16,31 @@ public class second_largest
             slargest=arr.get(i);
         }
         System.out.println("The second largest element in the array is : "+ slargest);
+    }*/
+
+    //My approach
+    static void s_largest(List<Integer> arr,int n)
+    {
+        int smallest=Integer.MAX_VALUE;
+        int s_smallest=Integer.MAX_VALUE;
+        int largest=Integer.MIN_VALUE;
+        int s_largest=Integer.MIN_VALUE;
+
+        for(int i: arr)
+        {
+            if(i<smallest) smallest=i;
+            if(i>largest) largest=i;
+        }
+
+        for(int i: arr)
+        {
+            if(i>smallest)
+            s_smallest=Math.min(i,s_smallest);
+            if(i<largest)
+            s_largest=Math.max(i, s_largest);
+        }
+        System.out.println("The second smallest element in the array is : "+ s_smallest);
+        System.out.println("The second largest element in the array is : "+ s_largest);
     }
     public static void main(String[] args) 
     {
