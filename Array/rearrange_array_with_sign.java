@@ -1,22 +1,22 @@
 import java.util.*;
 public class rearrange_array_with_sign 
 {
-    static int[] sortedarray(int arr[])
+    static int[] sortedarray(int nums[])
     {
-        /*//Variety 1
-        int ans[]=new int[arr.length];
+        //Variety 1
+        /*int ans[]=new int[nums.length];
         int pos=0,neg=1;
         
-        for(int i=0;i<arr.length;i++)
+        for(int i=0;i<nums.length;i++)
         {
-            if(arr[i]>0)
+            if(nums[i]>0)
             {
-                ans[pos]=arr[i];
+                ans[pos]=nums[i];
                 pos+=2;
             }
             else
             {
-                ans[neg]=arr[i];
+                ans[neg]=nums[i];
                 neg+=2;
             }
         }
@@ -25,13 +25,13 @@ public class rearrange_array_with_sign
         //variety 2
         List<Integer> positive=new ArrayList<>();
         List<Integer> negative=new ArrayList<>();
-        int ans[]=new int[arr.length];
-        for(int i=0;i<arr.length;i++)
+        int ans[]=new int[nums.length];
+        for(int i=0;i<nums.length;i++)
         {
-            if(arr[i]>0)
-            positive.add(arr[i]);
+            if(nums[i]>0)
+            positive.add(nums[i]);
             else
-            negative.add(arr[i]);
+            negative.add(nums[i]);
         }
 
         if(positive.size()>negative.size())
