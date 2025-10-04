@@ -10,21 +10,21 @@ public class mountain_array
         else
         {
             int max=0;
-            for(int i=0;i<arr.length;i++)
+            for(int i=0;i<arr.length;i++)  
             {
                 if(arr[i]>arr[max])
                 max=i;
             }
-            if(max==arr.length-1 || max==0)
+            if(max==arr.length-1 || max==0) //if max-valued element is at the beginning or end then return false
             return false;
             
             int flag=1;
-            for(int i=1;i<max;i++)
+            for(int i=1;i<max;i++) //check all the elements before max is less or not; if not set flag=0
             {
                 if(arr[i-1]>=arr[i])
                 flag=0;
             }
-            for(int i=max;i<arr.length-1;i++)
+            for(int i=max;i<arr.length-1;i++) //check all the elements after max is greater or not; if not set fag=0
             {
                 if(arr[i]<=arr[i+1])
                 flag=0;
