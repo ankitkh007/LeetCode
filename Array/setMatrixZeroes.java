@@ -110,7 +110,7 @@ public class setMatrixZeroes
     static void set_matrix(int arr[][],int n, int m)
     {
         int col0=1;
-        for(int i=0;i<n;i++) //set specif 1st row and column to 0
+        for(int i=0;i<n;i++) //set specific 1st row and column to 0
         {
             for(int j=0;j<m;j++)
             {
@@ -124,7 +124,7 @@ public class setMatrixZeroes
                 }
             }
         }
-        for(int i=1;i<n;i++) //make changes in the netire matrix leavig 1st row and 1st column
+        for(int i=1;i<n;i++) //make changes in the entire matrix leavig 1st row and 1st column
         {
             for(int j=1;j<m;j++)
             {
