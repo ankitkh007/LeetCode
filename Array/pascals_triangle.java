@@ -37,7 +37,7 @@ public class pascals_triangle
         row.add(ans);
         for(int i=1;i<n;i++)
         {
-            ans=ans*(n-i)/i;
+            ans=ans*(n-i)/i; //finding nCr in least TC
             row.add(ans);
         }
         return row;
