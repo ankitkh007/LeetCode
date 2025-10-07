@@ -6,17 +6,17 @@ public class sort_012_DutchnationalFlagAlgo
         int low=0,mid=0,high=arr.length-1;
         while(mid<=high)
         {
-            if(arr[mid]==0)
+            if(arr[mid]==0) //if 0 found swap it with arr[low] so as to keep 0's at the beginning 
             {
-                int temp=arr[mid];
+                int temp=arr[mid]; 
                 arr[mid]=arr[low];
                 arr[low]=temp;
                 low++;
                 mid++;
             }
-            else if(arr[mid]==1)
+            else if(arr[mid]==1) //if 1 is found no need to do anything just increase mid counter it'll find it place automatically
             mid++;
-            else
+            else //if 2 is found swap it with arr[high] so as to keep 0's at the end
             {
                 int temp=arr[mid];
                 arr[mid]=arr[high];
