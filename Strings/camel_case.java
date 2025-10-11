@@ -27,7 +27,7 @@ public class camel_case
             System.out.println("Enter your String: ");
             String str=sc.nextLine();
     
-            System.out.println("The substrings of given String are: "+convertToCamelCase(str));
+            System.out.println("The Camel case of the String is: "+convertToCamelCase(str));
     
             sc.close();
     }

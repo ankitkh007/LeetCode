@@ -29,8 +29,11 @@ class panagram
         Scanner sc=new Scanner(System.in);
             System.out.println("Enter your String: ");
             String str=sc.nextLine();
-    
-            System.out.println("The substrings of given String are: "+checkPangram(str));
+
+            if(checkPangram(str))
+            System.out.println("The given String is a Panagram String");
+            else
+            System.out.println("The given String is not a Panagram String");
     
             sc.close();
     }
