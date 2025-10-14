@@ -15,13 +15,13 @@ public class k_anagram
         //Traverse through 2nd String and decrememt the frequency of each character
         for(char ch:s2.toCharArray())
         {
-            if(map.getOrDefault(ch, 0)>0)//decrement the frequency of only those characters which are matching
+            if(map.getOrDefault(ch, 0)>0)//decrement the frequency of only those characters which are already present
             map.put(ch, map.getOrDefault(ch, 0)-1);
         }
 
         int sum=0;
-        for(var ch: map.entrySet()) //if frequency of every character in the HashMap is zero then the Strings the Anagrams 
-        sum+=ch.getValue();
+        for(char ch: map.keySet()) //if frequency of every character in the HashMap is zero then the Strings the Anagrams 
+        sum+=map.get(ch);
 
         return (sum>k) ? false: true;
 
