@@ -13,13 +13,13 @@ public class findEarliestRepeatingCharacter
         {
             char ch=s.charAt(i);
 
-            if(map.containsKey(ch))
+            if(map.containsKey(ch)) //map contains the current character
             {
-                idx_diff=i-map.get(ch);
-                if(idx_diff<min_diff)
+                idx_diff=i-map.get(ch); //calculate the difference between previous index and cureent index
+                if(idx_diff<min_diff)  //if the index difference < minimum difeerence 
                 {
-                    min_diff=idx_diff;
-                    erc=ch;
+                    min_diff=idx_diff; //update the minimum difference
+                    erc=ch; //store the current character
                 }
             }
 
