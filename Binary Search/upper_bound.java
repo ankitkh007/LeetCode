@@ -3,7 +3,7 @@ public class upper_bound
 {
     static int getUpperBound(int nums[],int target)
     {
-        int low=0,high=nums.length;
+        int low=0,high=nums.length-1;
         int ans=nums.length;
 
         while(low<=high)

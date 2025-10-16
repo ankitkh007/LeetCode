@@ -1,7 +1,7 @@
 import java.util.*;
-public class lower_bound 
+public class insert_position
 {
-    static int getlowerBound(int nums[],int target)
+    static int getInsertPos(int nums[],int target)
     {
         int low=0,high=nums.length-1;
         int ans=nums.length;
@@ -10,7 +10,7 @@ public class lower_bound
         {
             int mid=(low+high)/2;
 
-            if(nums[mid]>=target)
+            if(target<=nums[mid])
             {
                 ans=mid;
                 high=mid-1;
@@ -35,7 +35,7 @@ public class lower_bound
         System.out.println("Enter the number you want to search: ");
         int x=sc.nextInt();
 
-        System.out.println("The lower bound for "+x+" is: "+getlowerBound(arr,x));
+        System.out.println("The lower bound for "+x+" is: "+getInsertPos(arr,x));
         sc.close();
     }    
 }
