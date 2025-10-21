@@ -6,8 +6,8 @@ public class find_Nth_Root
         int low=1,high=x;
         while(low<=high)
         {
-            int mid=(low+high)/2;
-            int value=getPower(mid, n, x);
+            int mid=low+(high-low)/2;
+            long value=getPower(mid, n, x);
             if(value==x)
             return mid;
             else if(value>x)
@@ -20,7 +20,7 @@ public class find_Nth_Root
 
     static int getPower(int base, int power, int limit)
     {
-        int ans=1;
+        long ans=1;
         for(int i=1;i<=power;i++)
         {
             ans*=base;
