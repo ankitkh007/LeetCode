@@ -1,7 +1,7 @@
 import java.util.*;
 public class koko_eating_bananas
 {
-    static int getMaxValue(int arr[])
+    static int getMaxValue(int arr[]) //returns the maximum value from the array
     {
         int max=Integer.MIN_VALUE;
         for(int i=0;i<arr.length;i++)
@@ -10,8 +10,8 @@ public class koko_eating_bananas
         return max;
     }
 
-    static int getTotalHours(int arr[], int hourly)
-    {
+    static int getTotalHours(int arr[], int hourly) //calculates the total hours needed for koko 
+    {                                               //to finish the entire banana piles for individual hourly rate(bananas/hr)
         int totalhrs=0;
         for(int i=0;i<arr.length;i++)
         totalhrs+=Math.ceil((double)arr[i]/(double)hourly);
@@ -29,7 +29,7 @@ public class koko_eating_bananas
 
             int totalhours=getTotalHours(piles, mid);
 
-            if(totalhours<=h)
+            if(totalhours<=h) //if total hours required is in the given range then simply check for lower hourly rates 
             high=mid-1;
             else
             low=mid+1;
