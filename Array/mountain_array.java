@@ -24,7 +24,7 @@ public class mountain_array
                 if(arr[i-1]>=arr[i])
                 flag=0;
             }
-            for(int i=max;i<arr.length-1;i++) //check all the elements after max is greater or not; if not set flag=0
+            for(int i=max;i<arr.length-1;i++) //check all the elements after max is less or not; if not set flag=0
             {
                 if(arr[i]<=arr[i+1])
                 flag=0;
