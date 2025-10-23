@@ -24,8 +24,8 @@ public class capacity_to_ship_packages_in_D_days
         int days=1,sum=0;
         for(int i=0;i<arr.length;i++)
         {
-            // sum+=arr[i];
-            // if(sum>cap)
+            // sum+=arr[i]; //isme ye garbar tha ki jab hi humara load ka sum capacity ko exceed kar raha humne sum ko 0 se reset kar diya
+            // if(sum>cap)  //isse current load toh add hi nhi hua nad next iteration se new load add hona start ho gyee...!!
             // {
             //     days+=1;
             //     sum=0;
