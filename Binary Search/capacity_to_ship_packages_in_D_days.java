@@ -31,8 +31,8 @@ public class capacity_to_ship_packages_in_D_days
             //     sum=0;
             // }
 
-            if(sum+arr[i]>cap)
-            {
+            if(sum+arr[i]>cap) //and isme agar cureent load add karne se capacity exceed kar raha toh sum ko cureent load(arr[i]) se reset kar do
+            {                  //jisse next iteration me ye waala already added ho
                 days+=1;
                 sum=arr[i];
             }
