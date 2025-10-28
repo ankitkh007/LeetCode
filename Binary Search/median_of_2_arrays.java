@@ -1,9 +1,9 @@
 import java.util.Scanner;
 public class median_of_2_arrays
 {
-    static double median(int arr1[], int arr2[])
+    static double median(int nums1[], int nums2[])
     {
-        int n1=arr1.length, n2=arr2.length;
+        int n1=nums1.length, n2=nums2.length;
         int n=(n1+n2);
         int i=0,j=0;
         int ind2=n/2;
@@ -13,17 +13,17 @@ public class median_of_2_arrays
         
         while(i<n1 && j<n2)
         {
-            if(arr1[i]<arr2[j])
+            if(nums1[i]<nums2[j])
             {
-                if(count==ind1) ind1val=arr1[i];
-                if(count==ind2) ind2val=arr1[i];
+                if(count==ind1) ind1val=nums1[i];
+                if(count==ind2) ind2val=nums1[i];
                 count++;
                 i++;
             }
             else
             {
-                if(count==ind1) ind1val=arr2[j];
-                if(count==ind2) ind2val=arr2[j];
+                if(count==ind1) ind1val=nums2[j];
+                if(count==ind2) ind2val=nums2[j];
                 count++;
                 j++;
             }
@@ -31,15 +31,15 @@ public class median_of_2_arrays
 
         while(i<n1)
         {
-            if(count==ind1) ind1val=arr1[i];
-            if(count==ind2) ind2val=arr1[i];
+            if(count==ind1) ind1val=nums1[i];
+            if(count==ind2) ind2val=nums1[i];
             count++;
             i++;
         }
         while(j<n2)
         {
-            if(count==ind1) ind1val=arr2[j];
-            if(count==ind2) ind2val=arr2[j];
+            if(count==ind1) ind1val=nums2[j];
+            if(count==ind2) ind2val=nums2[j];
             count++;
             j++;
         }
