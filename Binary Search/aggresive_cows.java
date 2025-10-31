@@ -51,7 +51,7 @@ public class aggresive_cows
         System.out.println("Enter no. of cows: ");
         int cows=sc.nextInt();
 
-        System.out.println("The kth missing number is: "+ aggresiveCows(arr, cows));
+        System.out.println("The maximum distance among all minimums is: "+ aggresiveCows(arr, cows));
         sc.close();
     }
 }
