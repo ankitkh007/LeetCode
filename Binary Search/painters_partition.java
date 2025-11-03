@@ -21,35 +21,35 @@ public class painters_partition
     }
 
     //fuction to check whether can we place all the cows with our preffered distance or not
-    static int studentsCount(int arr[], int pageslimit)
+    static int PaintersCount(int arr[], int painterslimit)
     {
-        int countStudents=1, pages=0;
+        int countPainters=1, lastWall=0;
 
         for(int i=0;i<arr.length;i++)
         {
-            if(pages+arr[i]<=pageslimit) //if pagescount is within the limit just sum up the next page
-            pages+=arr[i];
+            if(lastWall+arr[i]<=painterslimit) //if painters-Count is within the limit just sum up the next wall
+            lastWall+=arr[i];
 
-            else //else increase the students count and set the current page to the pages variable 
+            else //else increase the painters count and set the current wall to the lastWall variable 
             {
-                countStudents++;
-                pages=arr[i];
+                countPainters++;
+                lastWall=arr[i];
             }
         }
-        return countStudents;
+        return countPainters;
     }
 
     //BS approach
-    static int PaintersPartition(int arr[], int students)
+    static int PaintersPartition(int arr[], int painters)
     {
-        if(students>arr.length) return -1;
+        if(painters>arr.length) return -1;
 
         int low=getMaxValue(arr),high=sumall(arr); //range=(max(arr)-->sum(arr))
         while(low<=high)
         {
             int mid=(low+high)/2;
 
-            if(studentsCount(arr,mid)<=students) //if studentsCount<=students that means we need to reduce our pages limit provided so as to accommodate every student
+            if(PaintersCount(arr,mid)<=painters) //if PaintersCount<=painters that means we need to reduce our painters limit provided so as to accommodate every painter
             high=mid-1;
             else
             low=mid+1;
@@ -68,9 +68,9 @@ public class painters_partition
         arr[i]=sc.nextInt();
 
         System.out.println("Enter no. of painters: ");
-        int stu=sc.nextInt();
+        int pt=sc.nextInt();
 
-        System.out.println("The minimum days required after all allocations is: "+ PaintersPartition(arr, stu));
+        System.out.println("The minimum days required after all allocations is: "+ PaintersPartition(arr, pt));
         sc.close();
     }
 }
