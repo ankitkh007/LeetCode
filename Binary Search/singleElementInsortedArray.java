@@ -15,8 +15,17 @@ public class singleElementInsortedArray
 
         return -1;
     }*/
+    static int findSingle(int arr[])
+    {
+        int ans=0;
+        for(int i=0;i<arr.length;i++)
+        ans^=arr[i];
 
-    //optimal approach using Binary search
+        return ans;
+
+    }
+
+    /*//optimal approach using Binary search
     static int findSingle(int nums[])
     {
         int n=nums.length;
@@ -46,7 +55,7 @@ public class singleElementInsortedArray
         }
 
         return -1;
-    }
+    }*/
 
     public static void main(String[] args)
     {
