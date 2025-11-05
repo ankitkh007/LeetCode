@@ -2,7 +2,7 @@ import java.util.*;
 public class Two_Sum_II
 {
     //two pointer approach
-    static int[] twoSum(int numbers[], int target)
+    /*static int[] twoSum(int numbers[], int target)
     {
         int left=0, right=numbers.length-1;
 
@@ -18,6 +18,35 @@ public class Two_Sum_II
             right--;
         }
         return new int[]{-1,-1};
+    }*/
+
+    //Binary Search approach
+    static int[] twoSum(int numbers[], int target)
+    {
+        int n=numbers.length;
+        for(int i=0;i<n;i++)
+        {
+            int needed=target-numbers[i];
+            int idx=binarySearch(numbers, i+1, n-1, needed);
+            if(idx!=-1)
+            return new int[] {i+1, idx+1};
+        }
+        return new int[] {-1, -1};
+    }
+
+    static int binarySearch(int arr[], int low, int high, int target)
+    {
+        while(low<=high)
+        {
+            int mid=(low+high)/2;
+            if(arr[mid]==target)
+            return mid;
+            else if(arr[mid]<target)
+            low=mid+1;
+            else
+            high=mid-1;
+        }
+        return -1;
     }
     public static void main(String[] args)
     {
