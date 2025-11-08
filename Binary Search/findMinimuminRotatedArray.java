@@ -6,7 +6,7 @@ public class findMinimuminRotatedArray
         int low=0,high=nums.length-1;
         int ans=Integer.MAX_VALUE;
 
-        while(low<=high)
+        while(low<=high) //Only works when there is no duplicate
         {
             int mid=(low+high)/2;
 
