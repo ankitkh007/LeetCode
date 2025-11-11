@@ -7,19 +7,20 @@ public class Index_of_first_Occurence
         int m=needle.length();
         int i=0,j=0;
 
-        while(i<n && j<m)
+        while(i<n)
         {
             if(haystack.charAt(i)==needle.charAt(j))
             {
                 i++;
                 j++;
 
-                if(j==m-1)
+                if(j==m)
                 return i-j;
             }
             else
             {
-                i++;j=0;
+                i=i-j+1; //means if my match fails then again start from the very next index 
+                j=0;
             }
         }
         return -1;
