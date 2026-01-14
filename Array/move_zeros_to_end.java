@@ -3,26 +3,35 @@ public class move_zeros_to_end
 {
     static void move(int arr[],int n)
     {
-        int j=-1;
+        // int j=-1;
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==0)
+        //     {
+        //         j=i;
+        //         break;
+        //     }
+        // }
+
+        // for(int i=j+1;i<n;i++)
+        // {
+        //     if(arr[i]!=0)
+        //     {
+        //         int temp=arr[j];
+        //         arr[j]=arr[i];
+        //         arr[i]=temp;
+        //         j++;
+        //     }
+        // }
+
+        int j=0;
         for(int i=0;i<n;i++)
         {
-            if(arr[i]==0)
-            {
-                j=i;
-                break;
-            }
+            if (arr[i]!=0)
+                arr[j++]=arr[i];
         }
-
-        for(int i=j+1;i<n;i++)
-        {
-            if(arr[i]!=0)
-            {
-                int temp=arr[j];
-                arr[j]=arr[i];
-                arr[i]=temp;
-                j++;
-            }
-        }
+        for(int i=j;i<n;i++)
+            arr[i]=0;
         System.out.println("The array after moving all zeroes to end is : ");
         for (int i=0;i<n;i++)
         System.out.print(arr[i] + " ");
