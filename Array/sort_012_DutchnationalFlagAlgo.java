@@ -1,33 +1,31 @@
 import java.util.*;
-public class sort_012_DutchnationalFlagAlgo
-{
-    static void sort012(int[] arr) 
-    {
-        int low=0,mid=0,high=arr.length-1;
-        while(mid<=high)
-        {
-            if(arr[mid]==0) //if 0 found swap it with arr[low] so as to keep 0's at the beginning 
+
+public class sort_012_DutchnationalFlagAlgo {
+    static void sort012(int[] arr) {
+        int low = 0, mid = 0, high = arr.length - 1;
+        while (mid <= high) {
+            if (arr[mid] == 0) // if 0 found swap it with arr[low] so as to keep 0's at the beginning
             {
-                int temp=arr[mid]; 
-                arr[mid]=arr[low];
-                arr[low]=temp;
+                int temp = arr[mid];
+                arr[mid] = arr[low];
+                arr[low] = temp;
                 low++;
                 mid++;
-            }
-            else if(arr[mid]==1) //if 1 is found no need to do anything just increase mid counter it'll find it place automatically
-            mid++;
-            else //if 2 is found swap it with arr[high] so as to keep 0's at the end
+            } else if (arr[mid] == 1) // if 1 is found no need to do anything just increase mid counter it'll find it
+                                      // place automatically
+                mid++;
+            else // if 2 is found swap it with arr[high] so as to keep 2's at the end
             {
-                int temp=arr[mid];
-                arr[mid]=arr[high];
-                arr[high]=temp;
+                int temp = arr[mid];
+                arr[mid] = arr[high];
+                arr[high] = temp;
                 high--;
             }
         }
 
         System.out.println("The sorted array is : ");
-        for(int i=0;i<arr.length;i++)
-        System.out.print(arr[i]+ " ");
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
     }
 
     public static void main(String[] args) {
@@ -38,7 +36,7 @@ public class sort_012_DutchnationalFlagAlgo
         int arr[] = new int[n];
         System.out.println("Enter " + n + " elements : ");
         for (int i = 0; i < n; i++)
-        arr[i] = sc.nextInt();
+            arr[i] = sc.nextInt();
 
         sort012(arr);
 
@@ -46,5 +44,5 @@ public class sort_012_DutchnationalFlagAlgo
     }
 }
 
-//TC--> O(n)
-//SC--> O(1)
+// TC--> O(n)
+// SC--> O(1)
