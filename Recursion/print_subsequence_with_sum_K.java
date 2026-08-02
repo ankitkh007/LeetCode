@@ -1,21 +1,27 @@
 import java.util.*;
 
 public class print_subsequence_with_sum_K {
-    static void subsequence(int idx, int n, int arr[], ArrayList<Integer> list, int s, int sum) {
+    static boolean subsequence(int idx, int n, int arr[], ArrayList<Integer> list, int s, int sum) {
         if (idx == n) {
             if (s == sum) {
                 for (int i : list)
                     System.out.print(i + " ");
                 System.out.println();
+                return true; // when only want to print single answer
             }
-            return;
+            return false;
         }
         list.add(arr[idx]); // Take
         s += arr[idx];
-        subsequence(idx + 1, n, arr, list, s, sum);
+        if (subsequence(idx + 1, n, arr, list, s, sum))
+            return true; // if this gives the answer return true no need to check further
+        ;
         list.remove(list.size() - 1); // Not take
         s -= arr[idx];
-        subsequence(idx + 1, n, arr, list, s, sum);
+        if (subsequence(idx + 1, n, arr, list, s, sum)) // same for this
+            return true;
+
+        return false; // otherwise return false
     }
 
     public static void main(String[] args) {
